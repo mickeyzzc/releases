@@ -6,3 +6,5 @@
 # (<product>-vX.Y.Z) and the folder name under products/.
 # scripts/publish.sh only accepts products listed here that have a guide at
 # products/<product>/README.md. Adding a product is the owner's decision.
+mibeebell MiBeeBell
+mibeereach MiBeeReach

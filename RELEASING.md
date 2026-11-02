@@ -14,8 +14,9 @@
 
 1. 在 [`products/registry.txt`](products/registry.txt) 加一行：`<product> <显示名>`。`<product>` 为小写短名（a-z、0-9、`-`），同时用作 tag 前缀和 `products/` 下的目录名。
 2. 按 [`products/TEMPLATE.md`](products/TEMPLATE.md) 写 `products/<product>/README.md`（英文）与 `README.zh-CN.md`（中文），只写可以公开的功能介绍。
-3. 在 `README.md`、`README.zh-CN.md` 的产品目录中加一行（目录下方的注释里有表格模板）。
-4. 提交前自检：用本地维护的 `RELEASES_DENYLIST` 对全仓执行 `grep -rnEi "$RELEASES_DENYLIST" .`，确认没有不该公开的内容。
+3. 在 `README.md`、`README.zh-CN.md` 的产品目录中加一行。
+4. 同步产品矩阵：在组织 profile 仓库 `Mi-Bee-Studio/.github` 的 `profile/product-matrix.svg` 中加入该产品（闭源产品用虚线绿框），并同步官网 `Mi-Bee-Studio.github.io/assets/` 下的副本。本仓库 README 直接引用 profile 原图，会自动跟上。
+5. 提交前自检：用本地维护的 `RELEASES_DENYLIST` 对全仓执行 `grep -rnEi "$RELEASES_DENYLIST" .`，确认没有不该公开的内容；产品介绍不写实现细节、性能实测数据或内部规划。
 
 `scripts/publish.sh` 只接受已登记、且已有 `products/<product>/README.md` 的产品。
 

@@ -17,74 +17,48 @@ Ready-to-run binaries, SHA-256 checksums and feature guides — the source code 
 
 > The name is an English take on **发布会** — a launch event. Every time a privately developed project ships, it takes the stage here.
 
-## What this repository is
+Binaries are published as [GitHub Releases](https://github.com/mickeyzzc/releases/releases), each with a `checksums.txt`. This repository holds no source code — only public feature guides and release tooling.
 
-Some projects are developed in private repositories. This repository is where their **compiled releases are published for everyone**:
+## Product matrix
 
-- 📦 **Binaries** — every version is a [GitHub Release](https://github.com/mickeyzzc/releases/releases) with one archive per platform.
-- 🔐 **Checksums** — every release ships a `checksums.txt` (SHA-256), so you can verify exactly what you downloaded.
-- 📖 **Feature guides** — every listed product has a public introduction under [`products/`](products/).
+<p align="center">
+  <a href="https://github.com/Mi-Bee-Studio" title="Mi&amp;Bee Studio on GitHub">
+    <img src="https://raw.githubusercontent.com/Mi-Bee-Studio/.github/main/profile/product-matrix.svg" alt="Mi&amp;Bee Studio product matrix: devices → protocol libraries → platform; MiBeeBell and MiBeeReach are closed-source products released here">
+  </a>
+</p>
 
-What it is **not**: this repository contains **no source code**. The "Source code (zip / tar.gz)" archives that GitHub attaches to every release automatically contain only these docs.
+The core line of the Mi&Bee ecosystem: devices → protocol libraries → platform. Dashed green chips are closed-source products whose binaries are released here. More views — observability, boards & edge, docs & portals — are on the [organization profile](https://github.com/Mi-Bee-Studio).
 
-## How it works
+## Products released here
 
-```mermaid
-flowchart LR
-    S["🔒 Private repositories<br/>source code"] -- "tag & build" --> A["📦 Release artifacts<br/>archives + checksums.txt"]
-    A -- "publish" --> R["🚀 mickeyzzc/releases<br/>GitHub Releases"]
-    D["📖 products/*<br/>feature guides"] -.- R
-    R -- "download & verify" --> U["🧑‍💻 You"]
-```
-
-## Product catalog
-
-> 🚧 **No products listed yet.** Each product gets a row here — and a guide under [`products/`](products/) — when its first release launches.
-
-<!-- Catalog template — uncomment when the first product launches:
 | Product | What it does | Platforms | License | Downloads |
 |---|---|---|---|---|
-| 🧩 **[Name](products/<product>/README.md)** | One-line description | Linux amd64 · arm64 | License | [Releases](https://github.com/mickeyzzc/releases/releases?q=<product>) |
--->
+| 🔔 **[MiBeeBell](products/mibeebell/README.md)** | Lightweight self-hosted alert hub — collects alerts from everything, denoises them and delivers to WeCom / DingTalk / Feishu / Telegram / email | Linux amd64 · arm64 · 32-bit ARM, Windows amd64 | AGPL-3.0 | 🚧 [Coming soon](https://github.com/mickeyzzc/releases/releases?q=mibeebell) |
+| 🖥️ **[MiBeeReach](products/mibeereach/README.md)** | Self-hosted, privacy-first remote access — remote desktop, terminal, SSH and intranet tunnels | Windows x64 · Linux (controlled side) | Proprietary | 🚧 [Coming soon](https://github.com/mickeyzzc/releases/releases?q=mibeereach) |
 
-## Downloading
+## Download & verify
 
-1. Open **[Releases](https://github.com/mickeyzzc/releases/releases)** and find your product — every tag starts with the product name (`<product>-vX.Y.Z`), so typing it into the search box filters the list.
+1. Open **[Releases](https://github.com/mickeyzzc/releases/releases)** and type the product name into the search box — every tag starts with it (`<product>-vX.Y.Z`).
 2. Download the archive for your OS / CPU architecture, plus `checksums.txt`.
-3. Verify the checksum (below), extract, and follow the *Quick start* in the product guide.
-
-### Verify your download
+3. Verify, extract, and follow the *Quick start* in the product guide.
 
 ```bash
-# Linux
-sha256sum -c checksums.txt --ignore-missing
-# macOS
-shasum -a 256 -c checksums.txt --ignore-missing
+sha256sum -c checksums.txt --ignore-missing              # Linux
+shasum -a 256 -c checksums.txt --ignore-missing          # macOS
 ```
 
 ```powershell
-# Windows (PowerShell) — compare the hash with the matching line in checksums.txt
-Get-FileHash .\<file>.zip -Algorithm SHA256
+Get-FileHash .\<file>.zip -Algorithm SHA256              # Windows: compare with checksums.txt
 ```
 
 A mismatch means the file is corrupted or is not the one published here — do not run it.
 
-## Conventions
-
-| Item | Format | Example |
-|---|---|---|
-| Tag | `<product>-v<semver>` | `<product>-v1.4.0` |
-| Release title | `<Product> v<semver>` | `<Product> v1.4.0` |
-| Archives | `<name>_<os>_<arch>.tar.gz` (`.zip` on Windows) | `<name>_linux_arm64.tar.gz` |
-| Checksums | `checksums.txt` — SHA-256, one line per file | `<sha256>  <name>_linux_arm64.tar.gz` |
-| Pre-releases | semver suffix `-alpha.N` / `-beta.N` / `-rc.N`, flagged *Pre-release* | `<product>-v2.0.0-rc.1` |
-
-Because several products share this repository, GitHub's **"Latest"** badge only marks the most recent launch — not necessarily the newest version of *your* product. Always pick the newest release that carries your product's prefix.
+Archives are named `<name>_<os>_<arch>.tar.gz` (`.zip` on Windows); pre-releases carry a `-rc.N` / `-beta.N` suffix and are flagged *Pre-release*. GitHub's "Latest" badge only marks the most recent launch across all products — pick the newest release with your product's prefix.
 
 ## Feedback & security
 
-- **Bugs and questions:** open an [issue](https://github.com/mickeyzzc/releases/issues/new/choose) with the product, release tag and your OS / architecture, plus the relevant log lines — **never paste passwords, tokens or private addresses**.
-- **Security vulnerabilities:** report them privately via **[Security → Report a vulnerability](https://github.com/mickeyzzc/releases/security/advisories/new)**, not in a public issue.
+- **Bugs and questions:** open an [issue](https://github.com/mickeyzzc/releases/issues/new/choose) with the product, release tag and your OS / architecture — **never paste passwords, tokens or private addresses**.
+- **Security vulnerabilities:** report them privately via **[Security → Report a vulnerability](https://github.com/mickeyzzc/releases/security/advisories/new)**.
 
 ## For maintainers
 

@@ -17,74 +17,48 @@
 
 > 仓库名取自 **「发布会」**：私有仓里开发的项目，每一次发版都在这里登台亮相。
 
-## 这是什么仓库
+二进制以 [GitHub Releases](https://github.com/mickeyzzc/releases/releases) 形式发布，每个版本附带 `checksums.txt`。本仓库不含源码，只放公开的功能介绍与发布工具。
 
-有些项目在私有仓库中开发。本仓库负责把它们的**编译产物公开发布给所有人**：
+## 产品矩阵
 
-- 📦 **二进制**：每个版本都是一个 [GitHub Release](https://github.com/mickeyzzc/releases/releases)，按平台各提供一个归档包。
-- 🔐 **校验**：每个 Release 附带 `checksums.txt`（SHA-256），下载后可自行核验。
-- 📖 **功能介绍**：每个上架的产品在 [`products/`](products/) 下都有一份公开的功能介绍。
+<p align="center">
+  <a href="https://github.com/Mi-Bee-Studio" title="Mi&amp;Bee Studio GitHub 组织">
+    <img src="https://raw.githubusercontent.com/Mi-Bee-Studio/.github/main/profile/product-matrix.svg" alt="Mi&amp;Bee Studio 产品矩阵：终端设备 → 协议库 → 平台服务；MiBeeBell 与 MiBeeReach 为在此发布的闭源产品">
+  </a>
+</p>
 
-本仓库**不包含任何源码**。GitHub 在每个 Release 自动附带的 “Source code (zip / tar.gz)” 压缩包里只有这些文档。
+Mi&Bee 生态的核心主线：终端设备 → 协议库 → 平台服务。虚线绿框是闭源产品，二进制在本仓库发布。可观测、开发板与边缘、文档与门户三张专题图见[组织主页](https://github.com/Mi-Bee-Studio)。
 
-## 运作方式
+## 在此发布的产品
 
-```mermaid
-flowchart LR
-    S["🔒 私有仓库<br/>源代码"] -- "打 tag 并构建" --> A["📦 发布制品<br/>归档包 + checksums.txt"]
-    A -- "发布" --> R["🚀 mickeyzzc/releases<br/>GitHub Releases"]
-    D["📖 products/*<br/>功能介绍"] -.- R
-    R -- "下载并校验" --> U["🧑‍💻 你"]
-```
-
-## 产品目录
-
-> 🚧 **暂无上架产品。** 产品首个版本发布时，会在这里新增一行，并在 [`products/`](products/) 下附上功能介绍。
-
-<!-- 目录表模板——首个产品上架时取消注释：
 | 产品 | 简介 | 平台 | 许可证 | 下载 |
 |---|---|---|---|---|
-| 🧩 **[名称](products/<product>/README.zh-CN.md)** | 一句话简介 | Linux amd64 · arm64 | 许可证 | [Releases](https://github.com/mickeyzzc/releases/releases?q=<product>) |
--->
+| 🔔 **[MiBeeBell 蜂铃](products/mibeebell/README.zh-CN.md)** | 轻量自托管告警通知中心：把各处告警统一去噪、聚合，送达企微 / 钉钉 / 飞书 / Telegram / 邮件 | Linux amd64 · arm64 · 32 位 ARM，Windows amd64 | AGPL-3.0 | 🚧 [即将发布](https://github.com/mickeyzzc/releases/releases?q=mibeebell) |
+| 🖥️ **[MiBeeReach](products/mibeereach/README.zh-CN.md)** | 自部署、隐私可控的统一远程接入：远程桌面、终端、SSH、内网隧道 | Windows x64 · Linux（被控端） | 专有软件 | 🚧 [即将发布](https://github.com/mickeyzzc/releases/releases?q=mibeereach) |
 
-## 下载
+## 下载与校验
 
-1. 打开 **[Releases](https://github.com/mickeyzzc/releases/releases)** 找到对应产品——每个 tag 都以产品名开头（`<product>-vX.Y.Z`），在搜索框输入产品名即可筛选。
+1. 打开 **[Releases](https://github.com/mickeyzzc/releases/releases)**，在搜索框输入产品名——每个 tag 都以它开头（`<product>-vX.Y.Z`）。
 2. 下载与你的系统 / CPU 架构匹配的归档包，以及 `checksums.txt`。
-3. 校验（见下）后解压，按产品介绍里的「快速上手」运行。
-
-### 校验下载
+3. 校验后解压，按产品介绍里的「快速上手」运行。
 
 ```bash
-# Linux
-sha256sum -c checksums.txt --ignore-missing
-# macOS
-shasum -a 256 -c checksums.txt --ignore-missing
+sha256sum -c checksums.txt --ignore-missing              # Linux
+shasum -a 256 -c checksums.txt --ignore-missing          # macOS
 ```
 
 ```powershell
-# Windows（PowerShell）——把输出的哈希与 checksums.txt 中对应行比对
-Get-FileHash .\<file>.zip -Algorithm SHA256
+Get-FileHash .\<file>.zip -Algorithm SHA256              # Windows：与 checksums.txt 比对
 ```
 
 哈希不一致说明文件已损坏或并非本仓库发布的文件——请勿运行。
 
-## 命名约定
-
-| 项目 | 格式 | 示例 |
-|---|---|---|
-| Tag | `<product>-v<semver>` | `<product>-v1.4.0` |
-| Release 标题 | `<Product> v<semver>` | `<Product> v1.4.0` |
-| 归档包 | `<name>_<os>_<arch>.tar.gz`（Windows 为 `.zip`） | `<name>_linux_arm64.tar.gz` |
-| 校验文件 | `checksums.txt`：SHA-256，每个文件一行 | `<sha256>  <name>_linux_arm64.tar.gz` |
-| 预发布 | semver 后缀 `-alpha.N` / `-beta.N` / `-rc.N`，标记为 *Pre-release* | `<product>-v2.0.0-rc.1` |
-
-多个产品共用本仓库，因此 GitHub 的 **“Latest”** 标签只代表“最近一次发布”，不一定是*你所用产品*的最新版。请以带有该产品前缀的最新 Release 为准。
+归档包命名为 `<name>_<os>_<arch>.tar.gz`（Windows 为 `.zip`）；预发布版本带 `-rc.N` / `-beta.N` 后缀并标记为 *Pre-release*。GitHub 的 “Latest” 标签只代表所有产品中最近一次发布——请以带有你所用产品前缀的最新 Release 为准。
 
 ## 反馈与安全
 
-- **问题反馈**：提交 [issue](https://github.com/mickeyzzc/releases/issues/new/choose)，写明产品、Release tag、系统 / 架构并附相关日志——**切勿粘贴密码、令牌或内网地址**。
-- **安全漏洞**：请通过 **[Security → Report a vulnerability](https://github.com/mickeyzzc/releases/security/advisories/new)** 私下报告，不要公开提 issue。
+- **问题反馈**：提交 [issue](https://github.com/mickeyzzc/releases/issues/new/choose)，写明产品、Release tag 与系统 / 架构——**切勿粘贴密码、令牌或内网地址**。
+- **安全漏洞**：请通过 **[Security → Report a vulnerability](https://github.com/mickeyzzc/releases/security/advisories/new)** 私下报告。
 
 ## 维护者
 
