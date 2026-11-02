@@ -1,0 +1,44 @@
+name: Bug report · 问题反馈
+description: Something is wrong with a published build · 已发布构建出现问题
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the report! **Do not paste passwords, tokens, private keys or internal addresses.**
+        感谢反馈！**请勿粘贴密码、令牌、私钥或内网地址。**
+        Security vulnerabilities → *Security → Report a vulnerability* instead. · 安全漏洞请走私密报告。
+  - type: input
+    id: product
+    attributes:
+      label: Product · 产品
+      placeholder: product name as shown in the catalog · 目录中的产品名
+    validations:
+      required: true
+  - type: input
+    id: release
+    attributes:
+      label: Release tag · 版本
+      placeholder: "<product>-vX.Y.Z"
+    validations:
+      required: true
+  - type: input
+    id: platform
+    attributes:
+      label: OS / architecture · 系统与架构
+      placeholder: e.g. Debian 12 arm64, Windows 11 x64
+    validations:
+      required: true
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened? · 现象
+      description: Steps to reproduce, expected vs. actual result. · 复现步骤、预期与实际结果。
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant logs · 相关日志
+      description: Redact secrets and addresses first. · 请先脱敏。
+      render: shell

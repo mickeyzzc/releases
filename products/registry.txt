@@ -1,0 +1,8 @@
+# Products published in this repository — one per line:
+#
+#   <product> <Display Title>
+#
+# <product> is a lowercase short name (a-z, 0-9, "-"). It is the tag prefix
+# (<product>-vX.Y.Z) and the folder name under products/.
+# scripts/publish.sh only accepts products listed here that have a guide at
+# products/<product>/README.md. Adding a product is the owner's decision.

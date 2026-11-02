@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Security vulnerability · 安全漏洞
+    url: https://github.com/mickeyzzc/releases/security/advisories/new
+    about: Report privately — please do not open a public issue. · 请私下报告，勿公开提 issue。
