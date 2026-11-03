@@ -8,7 +8,7 @@
 |---|---|
 | **状态** | 开发中——尚未发布任何版本 |
 | **平台** | Linux amd64 · arm64 · 32 位 ARM，Windows amd64 |
-| **许可证** | AGPL-3.0（源码计划开放） |
+| **许可证** | 待定——发布首个版本前公布 |
 | **下载** | [以 `mibeebell-v` 开头的 Releases](https://github.com/mickeyzzc/releases/releases?q=mibeebell) |
 
 ## 它做什么

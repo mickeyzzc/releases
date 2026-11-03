@@ -8,7 +8,7 @@
 |---|---|
 | **Status** | In development — no release published yet |
 | **Platforms** | Linux amd64 · arm64 · 32-bit ARM, Windows amd64 |
-| **License** | AGPL-3.0 (source code planned to be opened) |
+| **License** | To be announced — decided before the first release |
 | **Downloads** | [Releases tagged `mibeebell-v*`](https://github.com/mickeyzzc/releases/releases?q=mibeebell) |
 
 ## What it does
