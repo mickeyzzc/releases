@@ -15,13 +15,7 @@
 
 MiBeeBell collects events from everything that "alerts" in your home or office — NVRs, monitoring, scripts, IoT devices, Prometheus — runs them through one configurable pipeline, and delivers clean notifications to WeCom, DingTalk, Feishu, Telegram, email and more: **no notification storms, quiet recoveries, and a hub that never becomes a silent single point of failure**.
 
-```
-MiBeeNvr (NVR) ─────────────┐
-MiBeeSteward (assets) ──────┤                      ┌─ WeCom / DingTalk / Feishu
-Prometheus / Alertmanager ──┼──▶  MiBeeBell  ──────┼─ Telegram / Slack / Discord / Email
-any script / cron / IoT ────┘    (pipeline +       ├─ generic Webhook
-                                  denoise)          └─ MiBeeScout app
-```
+![MiBeeBell ecosystem position: event sources flow through the alert pipeline out to notification channels](images/ecosystem-en.svg)
 
 ## Key features
 

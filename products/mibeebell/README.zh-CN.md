@@ -15,13 +15,7 @@
 
 把家里 / 公司里所有会“报警”的东西（NVR、监控、脚本、IoT、Prometheus……）接到一个单二进制小服务上，由它统一去噪、聚合，再送达企微 / 钉钉 / 飞书 / Telegram / 邮件等渠道——**通知不轰炸、恢复不打扰、告警中心自己不挂**。
 
-```
-MiBeeNvr（NVR）─────────────┐
-MiBeeSteward（资产发现）────┤                     ┌─ 企微 / 钉钉 / 飞书
-Prometheus / Alertmanager ──┼──▶  MiBeeBell  ─────┼─ Telegram / Slack / Discord / 邮件
-任意脚本 / cron / IoT ──────┘   （管道 + 去噪）    ├─ 通用 Webhook
-                                                   └─ MiBeeScout App
-```
+![MiBeeBell 生态位置：事件来源经告警管道送达通知渠道](images/ecosystem-zh.svg)
 
 ## 核心能力
 
