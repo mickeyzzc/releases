@@ -34,7 +34,7 @@ The core line of the Mi&Bee ecosystem: devices → protocol libraries → platfo
 | Product | What it does | Platforms | License | Downloads |
 |---|---|---|---|---|
 | 🔔 **[MiBeeBell](products/mibeebell/README.md)** | Lightweight self-hosted alert hub — collects alerts from everything, denoises them and delivers to WeCom / DingTalk / Feishu / Telegram / email | Linux amd64 · arm64 · 32-bit ARM, Windows amd64; native fnOS packages (ARM64 / x86) | TBA | ✅ [v0.1.0 released](https://github.com/mickeyzzc/releases/releases/tag/mibeebell-v0.1.0) |
-| 🖥️ **[MiBeeReach](products/mibeereach/README.md)** | Self-hosted, privacy-first remote access — remote desktop, terminal, SSH and intranet tunnels | Windows x64 · Linux (controlled side) | Proprietary | 🚧 [Coming soon](https://github.com/mickeyzzc/releases/releases?q=mibeereach) |
+| 🖥️ **[MiBeeReach](products/mibeereach/README.md)** | Self-hosted, privacy-first remote access — remote desktop, terminal, SSH and intranet tunnels | Windows x64 · Linux (controlled side) · macOS arm64 (controller) | Proprietary | ✅ [v0.1.0 released](https://github.com/mickeyzzc/releases/releases/tag/mibeereach-v0.1.0) |
 
 ## Download & verify
 

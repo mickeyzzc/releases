@@ -34,7 +34,7 @@ Mi&Bee 生态的核心主线：终端设备 → 协议库 → 平台服务。虚
 | 产品 | 简介 | 平台 | 许可证 | 下载 |
 |---|---|---|---|---|
 | 🔔 **[MiBeeBell 蜂铃](products/mibeebell/README.zh-CN.md)** | 轻量自托管告警通知中心：把各处告警统一去噪、聚合，送达企微 / 钉钉 / 飞书 / Telegram / 邮件 | Linux amd64 · arm64 · 32 位 ARM，Windows amd64；飞牛原生包（ARM64 / x86） | 待公布 | ✅ [v0.1.0 已发布](https://github.com/mickeyzzc/releases/releases/tag/mibeebell-v0.1.0) |
-| 🖥️ **[MiBeeReach](products/mibeereach/README.zh-CN.md)** | 自部署、隐私可控的统一远程接入：远程桌面、终端、SSH、内网隧道 | Windows x64 · Linux（被控端） | 专有软件 | 🚧 [即将发布](https://github.com/mickeyzzc/releases/releases?q=mibeereach) |
+| 🖥️ **[MiBeeReach](products/mibeereach/README.zh-CN.md)** | 自部署、隐私可控的统一远程接入：远程桌面、终端、SSH、内网隧道 | Windows x64 · Linux（被控端）· macOS arm64（主控端） | 专有软件 | ✅ [v0.1.0 已发布](https://github.com/mickeyzzc/releases/releases/tag/mibeereach-v0.1.0) |
 
 ## 下载与校验
 
