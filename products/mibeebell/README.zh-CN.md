@@ -6,9 +6,9 @@
 
 | | |
 |---|---|
-| **状态** | 开发中——尚未发布任何版本 |
-| **平台** | Linux amd64 · arm64 · 32 位 ARM，Windows amd64 |
-| **许可证** | 待定——发布首个版本前公布 |
+| **状态** | ✅ v0.1.0 已发布（2026-11-04） |
+| **平台** | Linux amd64 · arm64 · 32 位 ARM，Windows amd64；飞牛 fnOS 原生包（ARM64 / x86） |
+| **许可证** | 待公布 |
 | **下载** | [以 `mibeebell-v` 开头的 Releases](https://github.com/mickeyzzc/releases/releases?q=mibeebell) |
 
 ## 它做什么
@@ -33,27 +33,25 @@ Prometheus / Alertmanager ──┼──▶  MiBeeBell  ─────┼─ T
 - **真自托管**：零云依赖，渠道凭证加密存放在你自己的磁盘上。
 - **小而完整**：CGO-free 单二进制，内嵌中英双语 Web UI 与 SQLite 存储；内存约 20 MB，按树莓派可跑设计。
 
-## 快速上手（发布后）
+## 快速上手
+
+**飞牛（fnOS）**：下载 Releases 里对应机型的 fpk（ARM64 机型用 `-arm64.fpk`，Intel/AMD 机型用 `-amd64.fpk`），应用中心手动安装，桌面点开蜂铃即可——首次打开引导设置管理员密码。
+
+**二进制**：
 
 ```bash
 tar -xzf mibee-bell_linux_arm64.tar.gz
-./mibee-bell hash-password --password 'your-admin-password'   # 输出 password_hash
-
-cat > config.yaml <<'EOF'
-server:
-  listen: ":9080"
-auth:
-  password_hash: "$2a$10$..."      # 上一步的输出
-storage:
-  path: ./mibee-bell.db
-ingest:
-  webhook_tokens:
-    - token: "a-long-random-token"
-      default_source: "myapp"
-  alertmanager: true
-EOF
-
-./mibee-bell -config config.yaml
+./mibee-bell -listen :9080
 ```
 
-浏览器打开 `http://<主机>:9080`，登录后新增一个渠道并发一条测试告警即可。完整手册见[文档中心](https://www.mickeybee.cn/docs/mibeebell)。
+浏览器打开 `http://<主机>:9080`，首次访问引导设置管理员密码（≥8 位，自动落盘），然后新增一个渠道并发一条测试告警即可。
+
+**把第一条告警发进来**：设置 → 摄取令牌，新建令牌，然后
+
+```bash
+curl -X POST "http://<主机>:9080/api/ingest/webhook/<令牌>" \
+  -H "Content-Type: application/json" \
+  -d '{"type":"device_lost","severity":"warning","title":"客厅摄像头离线","body":"已失联 10 分钟","source_ref":"cam-01"}'
+```
+
+完整用户手册见发布附件 `user-guide.md`，在线版见[文档中心](https://www.mickeybee.cn/docs/mibeebell)。
