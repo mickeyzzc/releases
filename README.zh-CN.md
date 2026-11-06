@@ -35,6 +35,7 @@ Mi&Bee 生态的核心主线：终端设备 → 协议库 → 平台服务。虚
 |---|---|---|---|---|
 | 🔔 **[MiBeeBell 蜂铃](products/mibeebell/README.zh-CN.md)** | 轻量自托管告警通知中心：把各处告警统一去噪、聚合，送达企微 / 钉钉 / 飞书 / Telegram / 邮件 | Linux amd64 · arm64 · 32 位 ARM，Windows amd64；飞牛原生包（ARM64 / x86） | 待公布 | ✅ [v0.1.0 已发布](https://github.com/mickeyzzc/releases/releases/tag/mibeebell-v0.1.0) |
 | 🖥️ **[MiBeeReach](products/mibeereach/README.zh-CN.md)** | 自部署、隐私可控的统一远程接入：远程桌面、终端、SSH、内网隧道 | Windows x64 · Linux（被控端）· macOS arm64（主控端） | 专有软件 | ✅ [v0.1.0 已发布](https://github.com/mickeyzzc/releases/releases/tag/mibeereach-v0.1.0) |
+| 👁️ **[MiBeeVision](products/mibee-vision/README.zh-CN.md)** | MiBeeNvr 的视频 AI 引擎：YOLOv8n 检测 + ByteTrack 跟踪 + 区域入侵/越界/徘徊规则，事件与带框快照回写 NVR | Linux amd64 · arm64 | 专有软件（内置模型 AGPL-3.0） | ✅ [v0.1.0 已发布](https://github.com/mickeyzzc/releases/releases/tag/mibee-vision-v0.1.0) |
 
 ## 下载与校验
 

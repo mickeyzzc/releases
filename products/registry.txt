@@ -8,3 +8,4 @@
 # products/<product>/README.md. Adding a product is the owner's decision.
 mibeebell MiBeeBell
 mibeereach MiBeeReach
+mibee-vision MiBeeVision
