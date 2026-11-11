@@ -6,7 +6,7 @@
 
 | | |
 |---|---|
-| **Status** | ✅ v0.1.0 released (2026-11-04) |
+| **Status** | ✅ v0.2.0 released (2026-11-12) |
 | **Platforms** | Linux amd64 · arm64 · 32-bit ARM, Windows amd64; native fnOS packages (ARM64 / x86) |
 | **License** | To be announced |
 | **Downloads** | [Releases tagged `mibeebell-v*`](https://github.com/mickeyzzc/releases/releases?q=mibeebell) |
@@ -23,6 +23,9 @@ MiBeeBell collects events from everything that "alerts" in your home or office �
 - **Alert pipeline** — dedup, aggregation, cooldown, escalation and silence windows, plus automatic recovery notices: a camera flapping 30 times a minute becomes one message.
 - **Channels for China and the world** — WeCom, DingTalk, Feishu, Telegram, Slack, Discord, SMTP email, generic Webhook and the MiBeeScout app. One channel is one adapter, so a platform policy change only ever affects that channel.
 - **High availability** — run 2–5 all-active nodes; any node can fail without interrupting notifications.
+- **Per-person subscriptions** — everyone receives just their own slice: personal recipient overrides, cross-midnight quiet hours (errors are held into an end-of-window digest and never dropped; critical delivers immediately) and guaranteed recovery notices.
+- **Multi-Bell federation** — member sites behind an aggregator; silence windows push across sites, so one operator action quiets the whole estate.
+- **Zero-config discovery** — find Bell on the LAN via mDNS and well-known service descriptors; MiBeeScout pairs automatically.
 - **Optional AI triage** — off by default; AI can only downgrade severity and never drops an event, so notifications keep flowing without it.
 - **Truly self-hosted** — zero cloud dependency; channel credentials are stored encrypted on your own disk.
 - **Small and complete** — one CGO-free binary with an embedded web UI (English / Chinese) and built-in SQLite storage; about 20 MB of memory, designed to run on a Raspberry Pi.
