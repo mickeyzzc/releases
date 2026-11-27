@@ -23,18 +23,18 @@ Binaries are published as [GitHub Releases](https://github.com/mickeyzzc/release
 
 <p align="center">
   <a href="https://github.com/Mi-Bee-Studio" title="Mi&amp;Bee Studio on GitHub">
-    <img src="https://raw.githubusercontent.com/Mi-Bee-Studio/.github/main/profile/product-matrix.svg" alt="Mi&amp;Bee Studio product matrix: devices → protocol libraries → platform; MiBeeBell and MiBeeReach are closed-source products released here">
+    <img src="https://raw.githubusercontent.com/Mi-Bee-Studio/.github/main/profile/product-matrix.svg" alt="Mi&amp;Bee Studio product matrix: devices → protocol libraries → platform; Bell / Reach / Vision binaries are released here, Hive is not">
   </a>
 </p>
 
-The core line of the Mi&Bee ecosystem: devices → protocol libraries → platform. Dashed green chips are closed-source products whose binaries are released here. More views — observability, boards & edge, docs & portals — are on the [organization profile](https://github.com/Mi-Bee-Studio).
+The core line of the Mi&Bee ecosystem: devices → protocol libraries → platform. Dashed green chips are closed-source products: Bell / Reach / Vision binaries are released here; Hive is not. More views — observability, boards & edge, docs & portals — are on the [organization profile](https://github.com/Mi-Bee-Studio).
 
 ## Products released here
 
 | Product | What it does | Platforms | License | Downloads |
 |---|---|---|---|---|
 | 🔔 **[MiBeeBell](products/mibeebell/README.md)** | Lightweight self-hosted alert hub — collects alerts from everything, denoises them and delivers to WeCom / DingTalk / Feishu / Telegram / email | Linux amd64 · arm64 · 32-bit ARM, Windows amd64; native fnOS packages (ARM64 / x86) | TBA | ✅ [v0.2.0 released](https://github.com/mickeyzzc/releases/releases/tag/mibeebell-v0.2.0) |
-| 🖥️ **[MiBeeReach](products/mibeereach/README.md)** | Self-hosted, privacy-first remote access — remote desktop, terminal, SSH and intranet tunnels | Windows x64 · Linux (controlled side) · macOS arm64 (controller) | Proprietary | ✅ [v0.1.0 released](https://github.com/mickeyzzc/releases/releases/tag/mibeereach-v0.1.0) |
+| 🖥️ **[MiBeeReach](products/mibeereach/README.md)** | Self-hosted, privacy-first remote access — remote desktop, terminal, SSH and intranet tunnels | Windows x64 host + controller · Linux controlled side · macOS arm64 controller | Proprietary | ✅ [v0.1.0 released](https://github.com/mickeyzzc/releases/releases/tag/mibeereach-v0.1.0) |
 | 👁️ **[MiBeeVision](products/mibee-vision/README.md)** | Video-AI engine for MiBeeNvr — YOLOv8n detection, ByteTrack tracking, zone / crossing / loitering rules, events & snapshots written back to the NVR | Linux amd64 · arm64 | Proprietary (bundled model AGPL-3.0) | ✅ [v0.1.0 released](https://github.com/mickeyzzc/releases/releases/tag/mibee-vision-v0.1.0) |
 
 ## Download & verify
@@ -54,7 +54,7 @@ Get-FileHash .\<file>.zip -Algorithm SHA256              # Windows: compare with
 
 A mismatch means the file is corrupted or is not the one published here — do not run it.
 
-Archives are named `<name>_<os>_<arch>.tar.gz` (`.zip` on Windows); pre-releases carry a `-rc.N` / `-beta.N` suffix and are flagged *Pre-release*. GitHub's "Latest" badge only marks the most recent launch across all products — pick the newest release with your product's prefix.
+Archives use the naming convention `<name>_<os>_<arch>.tar.gz` (`.zip` on Windows), while fnOS packages, standalone binaries and bundled runtime libraries use product-specific names. Pre-releases carry a `-rc.N` / `-beta.N` suffix and are flagged *Pre-release*. GitHub's "Latest" badge only marks the most recent launch across all products — pick the newest release with your product's prefix.
 
 ## Feedback & security
 

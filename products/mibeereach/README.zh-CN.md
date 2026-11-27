@@ -6,8 +6,8 @@
 
 | | |
 |---|---|
-| **状态** | **v0.1.0 已发布**——2026-11 |
-| **平台** | Windows x64（主控端、被控端、管理控制台）· Linux（被控端）· macOS arm64（主控端） |
+| **状态** | **v0.1.0 已发布**——2026-11-04 |
+| **平台** | Windows x64 host（被控端）+ controller（主控端）· Linux 被控端 · macOS arm64 主控端 |
 | **文档** | [使用指南](user-guide.zh-CN.md) · [User guide](user-guide.md) |
 | **许可证** | 专有软件——© Mi&Bee Studio，保留所有权利；以每个 Release 随附的许可证文件为准 |
 | **下载** | [以 `mibeereach-v` 开头的 Releases](https://github.com/mickeyzzc/releases/releases?q=mibeereach) |
@@ -27,11 +27,11 @@ MiBeeReach 是一个用 Rust 从零构建的远程运维平台。远程桌面、
 
 | 能力 | 说明 | 平台 |
 |---|---|---|
-| **远程桌面** | 视频、键鼠、剪贴板（文本 / 图片 / 文件）、音频、文件互传、多显示器、只读模式 | 被控端：Windows · Linux — 主控端：Windows · macOS |
-| **远程终端** | 局域网内的远程 shell | Windows · Linux |
-| **远程 SSH** | 内置 SSH server，任何标准 `ssh` 客户端都能直连 | Windows · Linux |
-| **内网穿透隧道** | 安全地对外暴露内网 TCP 服务 | Windows · Linux |
-| **管理控制台** | 桌面应用：快速连接、局域网设备发现、工作区、内嵌终端、SSH 页签、会话监控 | Windows · macOS |
+| **远程桌面** | 视频、键鼠、剪贴板（文本 / 图片 / 文件）、音频、文件互传、多显示器、只读模式 | 被控 host：Windows · Linux — 主控端：Windows · macOS |
+| **远程终端** | 局域网内的远程 shell | 被控端：Windows · Linux — 主控端：Windows · macOS |
+| **远程 SSH** | 内置 SSH server，任何标准 `ssh` 客户端都能直连 | 被控端：Windows · Linux — 主控端：标准 `ssh` 客户端 |
+| **内网穿透隧道** | 安全地对外暴露内网 TCP 服务 | 被控端：Windows · Linux — 主控端：Windows · macOS |
+| **管理控制台** | 桌面应用：快速连接、局域网设备发现、工作区、内嵌终端、SSH 页签、会话监控 | 主控端：Windows · macOS |
 
 为真实网络而做：弱网自适应画质、无人观看时几乎零 CPU、可选硬件视频编码。
 
