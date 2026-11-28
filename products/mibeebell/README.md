@@ -6,7 +6,7 @@
 
 | | |
 |---|---|
-| **Status** | ✅ v0.2.0 released (2026-11-12) |
+| **Status** | ✅ v0.2.0 released (2026-11-11) |
 | **Platforms** | Linux amd64 · arm64 · 32-bit ARM, Windows amd64; native fnOS packages (ARM64 / x86) |
 | **License** | To be announced |
 | **Downloads** | [Releases tagged `mibeebell-v*`](https://github.com/mickeyzzc/releases/releases?q=mibeebell) |

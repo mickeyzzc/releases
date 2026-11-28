@@ -6,7 +6,7 @@
 
 | | |
 |---|---|
-| **状态** | ✅ v0.2.0 已发布（2026-11-12） |
+| **状态** | ✅ v0.2.0 已发布（2026-11-11） |
 | **平台** | Linux amd64 · arm64 · 32 位 ARM，Windows amd64；飞牛 fnOS 原生包（ARM64 / x86） |
 | **许可证** | 待公布 |
 | **下载** | [以 `mibeebell-v` 开头的 Releases](https://github.com/mickeyzzc/releases/releases?q=mibeebell) |

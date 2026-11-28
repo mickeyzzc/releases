@@ -23,18 +23,18 @@
 
 <p align="center">
   <a href="https://github.com/Mi-Bee-Studio" title="Mi&amp;Bee Studio GitHub 组织">
-    <img src="https://raw.githubusercontent.com/Mi-Bee-Studio/.github/main/profile/product-matrix.svg" alt="Mi&amp;Bee Studio 产品矩阵：终端设备 → 协议库 → 平台服务；MiBeeBell 与 MiBeeReach 为在此发布的闭源产品">
+    <img src="https://raw.githubusercontent.com/Mi-Bee-Studio/.github/main/profile/product-matrix.svg" alt="Mi&amp;Bee Studio 产品矩阵：终端设备 → 协议库 → 平台服务；Bell / Reach / Vision 的二进制在本仓发布，Hive 不在本仓发布">
   </a>
 </p>
 
-Mi&Bee 生态的核心主线：终端设备 → 协议库 → 平台服务。虚线绿框是闭源产品，二进制在本仓库发布。可观测、开发板与边缘、文档与门户三张专题图见[组织主页](https://github.com/Mi-Bee-Studio)。
+Mi&Bee 生态的核心主线：终端设备 → 协议库 → 平台服务。虚线绿框是闭源产品，其中 Bell / Reach / Vision 的二进制在本仓库发布，Hive 不在本仓库发布。可观测、开发板与边缘、文档与门户三张专题图见[组织主页](https://github.com/Mi-Bee-Studio)。
 
 ## 在此发布的产品
 
 | 产品 | 简介 | 平台 | 许可证 | 下载 |
 |---|---|---|---|---|
 | 🔔 **[MiBeeBell 蜂铃](products/mibeebell/README.zh-CN.md)** | 轻量自托管告警通知中心：把各处告警统一去噪、聚合，送达企微 / 钉钉 / 飞书 / Telegram / 邮件 | Linux amd64 · arm64 · 32 位 ARM，Windows amd64；飞牛原生包（ARM64 / x86） | 待公布 | ✅ [v0.2.0 已发布](https://github.com/mickeyzzc/releases/releases/tag/mibeebell-v0.2.0) |
-| 🖥️ **[MiBeeReach](products/mibeereach/README.zh-CN.md)** | 自部署、隐私可控的统一远程接入：远程桌面、终端、SSH、内网隧道 | Windows x64 · Linux（被控端）· macOS arm64（主控端） | 专有软件 | ✅ [v0.1.0 已发布](https://github.com/mickeyzzc/releases/releases/tag/mibeereach-v0.1.0) |
+| 🖥️ **[MiBeeReach](products/mibeereach/README.zh-CN.md)** | 自部署、隐私可控的统一远程接入：远程桌面、终端、SSH、内网隧道 | Windows x64 host + controller · Linux 被控端 · macOS arm64 主控端 | 专有软件 | ✅ [v0.1.0 已发布](https://github.com/mickeyzzc/releases/releases/tag/mibeereach-v0.1.0) |
 | 👁️ **[MiBeeVision](products/mibee-vision/README.zh-CN.md)** | MiBeeNvr 的视频 AI 引擎：YOLOv8n 检测 + ByteTrack 跟踪 + 区域入侵/越界/徘徊规则，事件与带框快照回写 NVR | Linux amd64 · arm64 | 专有软件（内置模型 AGPL-3.0） | ✅ [v0.1.0 已发布](https://github.com/mickeyzzc/releases/releases/tag/mibee-vision-v0.1.0) |
 
 ## 下载与校验
@@ -54,7 +54,7 @@ Get-FileHash .\<file>.zip -Algorithm SHA256              # Windows：与 checksu
 
 哈希不一致说明文件已损坏或并非本仓库发布的文件——请勿运行。
 
-归档包命名为 `<name>_<os>_<arch>.tar.gz`（Windows 为 `.zip`）；预发布版本带 `-rc.N` / `-beta.N` 后缀并标记为 *Pre-release*。GitHub 的 “Latest” 标签只代表所有产品中最近一次发布——请以带有你所用产品前缀的最新 Release 为准。
+归档包通常采用 `<name>_<os>_<arch>.tar.gz`（Windows 为 `.zip`）的命名方式；fnOS 包、独立二进制与随包运行库使用产品各自的命名。预发布版本带 `-rc.N` / `-beta.N` 后缀并标记为 *Pre-release*。GitHub 的 “Latest” 标签只代表所有产品中最近一次发布——请以带有你所用产品前缀的最新 Release 为准。
 
 ## 反馈与安全
 

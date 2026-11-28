@@ -8,5 +8,6 @@ Every product published in this repository has a public guide here: `products/<p
 |---|---|
 | 🔔 MiBeeBell 蜂铃 | [English](mibeebell/README.md) · [中文](mibeebell/README.zh-CN.md) |
 | 🖥️ MiBeeReach | [English](mibeereach/README.md) · [中文](mibeereach/README.zh-CN.md) |
+| 👁️ MiBeeVision | [English](mibee-vision/README.md) · [中文](mibee-vision/README.zh-CN.md) |
 
 Maintainers · 维护者: start from [TEMPLATE.md](TEMPLATE.md), register the product in [registry.txt](registry.txt), and follow [RELEASING.md](../RELEASING.md).
