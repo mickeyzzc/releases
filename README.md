@@ -23,11 +23,11 @@ Binaries are published as [GitHub Releases](https://github.com/mickeyzzc/release
 
 <p align="center">
   <a href="https://github.com/Mi-Bee-Studio" title="Mi&amp;Bee Studio on GitHub">
-    <img src="https://raw.githubusercontent.com/Mi-Bee-Studio/.github/main/profile/product-matrix.svg" alt="Mi&amp;Bee Studio product matrix: devices → protocol libraries → platform; Bell / Reach / Vision binaries are released here, Hive is not">
+    <img src="https://raw.githubusercontent.com/Mi-Bee-Studio/.github/main/profile/product-matrix.svg" alt="Mi&amp;Bee Studio product matrix: devices → protocol libraries → platform; Bell / Reach / Vision binaries are released here">
   </a>
 </p>
 
-The core line of the Mi&Bee ecosystem: devices → protocol libraries → platform. Dashed green chips are closed-source products: Bell / Reach / Vision binaries are released here; Hive is not. More views — observability, boards & edge, docs & portals — are on the [organization profile](https://github.com/Mi-Bee-Studio).
+The core line of the Mi&Bee ecosystem: devices → protocol libraries → platform. Dashed green chips are closed-source products: Bell / Reach / Vision binaries are released here. More views — observability, boards & edge, docs & portals — are on the [organization profile](https://github.com/Mi-Bee-Studio).
 
 ## Products released here
 
